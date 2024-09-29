@@ -1,0 +1,17 @@
+{
+    "overrides": [
+      {
+        "files": ["src/utils/*.worker.js"],
+        "rules": {
+          "no-restricted-globals": [
+            "error",
+            {
+              "name": "self",
+              "message": "Expected 'self' to be used only in Web Workers."
+            }
+          ]
+        }
+      }
+    ]
+  }
+  
