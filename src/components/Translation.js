@@ -1,5 +1,5 @@
 import React from "react";
-import { LANGUAGES } from "../utils/presets";
+import { LANGUAGES } from "../utils/presets.js";
 
 export default function Translation(props) {
   const {

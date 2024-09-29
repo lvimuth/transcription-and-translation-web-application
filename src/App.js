@@ -1,13 +1,10 @@
-import "./App.css";
 import { useState, useRef, useEffect } from "react";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import MainSection from "./components/mainSection.js";
 import HomePage from "./components/HomePage.js";
 import Header from "./components/Header.js";
-import FileDisplay from "./components/FileDisplay";
-import Information from "./components/Information";
-import Transcribing from "./components/Transcribing";
-import { MessageTypes } from "./utils/presets";
+import FileDisplay from "./components/FileDisplay.js";
+import Information from "./components/Information.js";
+import Transcribing from "./components/Transcribing.js";
+import { MessageTypes } from "./utils/presets.js";
 
 function App() {
   const [file, setFile] = useState(null);
@@ -86,29 +83,27 @@ function App() {
       model_name,
     });
   }
+
   return (
-    <div className="bg-gradient-to-r from-blue-50 to-transparent text-slate-700 text-sm sm:text-base">
-      <div className="flex flex-col max-w-[1000px] mx-auto w-full">
-        <section className="min-h-screen flex flex-col">
-          <Header />
-          {output ? (
-            <Information output={output} finished={finished} />
-          ) : loading ? (
-            <Transcribing />
-          ) : isAudioAvailable ? (
-            <FileDisplay
-              handleFormSubmission={handleFormSubmission}
-              handleAudioReset={handleAudioReset}
-              file={file}
-              audioStream={audioStream}
-            />
-          ) : (
-            <HomePage setFile={setFile} setAudioStream={setAudioStream} />
-          )}
-        </section>
-        <MainSection />
-        <footer></footer>
-      </div>
+    <div className="flex flex-col max-w-[1000px] mx-auto w-full">
+      <section className="min-h-screen flex flex-col">
+        <Header />
+        {output ? (
+          <Information output={output} finished={finished} />
+        ) : loading ? (
+          <Transcribing />
+        ) : isAudioAvailable ? (
+          <FileDisplay
+            handleFormSubmission={handleFormSubmission}
+            handleAudioReset={handleAudioReset}
+            file={file}
+            audioStream={audioStream}
+          />
+        ) : (
+          <HomePage setFile={setFile} setAudioStream={setAudioStream} />
+        )}
+      </section>
+      <footer></footer>
     </div>
   );
 }

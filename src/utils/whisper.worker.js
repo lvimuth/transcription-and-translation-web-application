@@ -1,5 +1,5 @@
 import { pipeline } from "@xenova/transformers";
-import { MessageTypes } from "./presets";
+import { MessageTypes } from "./presets.js";
 
 class MyTranscriptionPipeline {
   static task = "automatic-speech-recognition";
