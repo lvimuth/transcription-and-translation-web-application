@@ -5,6 +5,7 @@ import FileDisplay from "./components/FileDisplay.js";
 import Information from "./components/Information.js";
 import Transcribing from "./components/Transcribing.js";
 import { MessageTypes } from "./utils/presets.js";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function App() {
   const [file, setFile] = useState(null);
